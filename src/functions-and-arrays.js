@@ -73,22 +73,15 @@ function sum(arr) {
 
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
-const number = [2, 6, 9, 10, 7, 4, 1, 9];
+const numbersAv = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers(arr) {
-  if (arr.length === 0) {
+function averageNumbers(numbersAv) {
+  if(!numbersAv.length){
     return null;
-  }
-
-let sum = 0;
-  
+  } else{
+      return sumNumbers(numbersAv) / numbersAv.length;
+    }
  
-for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-   }   
-      
-return sum / numbers.length;
-
 }
 
 
@@ -101,9 +94,13 @@ function averageWordLength(words) {
  
   if (words.length === 0) {
     return null;
-  } else if (numbers.length === 1) {
-    return numbers[0];
-  } 
+  } else {
+let result = 0;
+for (let i = 0; i < words.length; i++) {
+  result = result + words[i].length;
+  }
+  return result / words.length;
+  }
     
 }
 
@@ -144,7 +141,19 @@ function uniquifyArray(arr) {
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
-function doesWordExist() {}
+function doesWordExist(words, wordToSearch) {
+  if (words.length === 0) {
+    return null;
+  }
+
+  for (var i = 0; i < words.length; i++) {
+    if (words[i] === wordToSearch) {
+      return true;
+    }
+  }
+
+  return false;
+}
 
 
 
@@ -163,9 +172,20 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(words, wordToSearch) {
+  if (words.length === 0) {
+    return 0;
+  }
 
+  var count = 0;
+  for (var i = 0; i < words.length; i++) {
+    if (words[i] === wordToSearch) {
+      count++;
+    }
+  }
 
+  return count;
+}
 
 // Iteration #8: Bonus
 const matrix = [
